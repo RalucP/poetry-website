@@ -1,0 +1,346 @@
+
+/********************* General applicable styling *********************/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&display=swap');
+
+*{
+  font-family: 'Dancing Script', cursive;
+}
+
+body{
+  margin: 0;
+}
+
+.background{
+  margin: 0;
+  background-color: #c7d0d4;
+}
+
+.shadowed{
+  box-shadow: 0.1em 0.1em 0.2em 0.2em #c9e2ef;
+}
+
+
+/********************* Styling for the book and pages *********************/
+
+.container {
+  height: 1000vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.book{
+  height: 90%;
+  width: 95%;
+  position: fixed;
+  margin: 2.5% 2.5%;
+  overflow: hidden;
+  background: radial-gradient(circle, #e5f0f5 30%, #c7d0d4 100%);
+}
+
+.border-left{
+  height: 90%;
+  width: 70%;
+  position: absolute;
+  z-index: 3;
+  border-top: 5px solid #415e6b;
+  border-left: 5px solid #415e6b;
+}
+
+.border-right{
+  right: 0;
+  bottom: 0;
+  height: 90%;
+  width: 70%;
+  position: absolute;
+  z-index: 3;
+  border-bottom: 5px solid #415e6b;
+  border-right: 5px solid #415e6b;
+}
+  
+.page {
+  aspect-ratio: 1/1;
+  height: 80%;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 20%;
+  top: 50%;
+  transform: translate(-12%, -50%);
+  transform-origin: 14.6% 28.8%;
+}
+
+.shadow{
+  background-color: #415e6ba9;
+  top: 10%;
+  left: 15%;
+  
+  aspect-ratio: 1/0.1;
+  width: 45%;
+  border-radius: 80%;
+  filter: blur(2rem);
+}
+
+
+/********************* Styling for navigation menu *********************/
+
+.burger-menu{
+  right: 0;
+  margin: 2.5% 2.5%;
+  padding-top: 0;
+
+  height: 85.8%;
+
+  position: fixed;
+  z-index: 2;
+}
+
+.burger-menu .button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20%;
+
+  height: 5%;
+  aspect-ratio: 1/1;
+  position: inherit;
+  right: 0;
+
+  padding: 0.5% 0.5%;
+  margin: 0.5% 3%;
+
+  background-color: #567483;
+  border: 0;
+  border-radius: 0.3em;
+}
+
+.burger-menu .button:hover {
+  background-color: #415e6b;
+}
+
+.burger-menu .button .line{
+  width: 95%;
+  height: 5%;
+  background-color:rgb(245, 239, 237);
+  border-radius: 50em;
+
+  transition-duration: 200ms;
+}
+
+.burger-menu .content{
+  display: none;
+
+  background-color: #567483;
+  color: rgb(245, 239, 237);
+
+  height: 100%;
+  aspect-ratio: 1/1.2;
+
+  margin: 0;
+  border-top: 5px solid #415e6b;
+  border-right: 5px solid #415e6b;
+  border-bottom: 5px solid #415e6b;
+  border-radius: 10px 0px 0px 10px;
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+
+.burger-menu .content .nav-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+
+  font-size: large;
+}
+
+.burger-menu .content .nav-bar p{
+  cursor: pointer;
+  padding: 1% 2%;
+  margin: 0;
+}
+
+.selected{
+  opacity: 100%;
+  border-bottom: 2px solid rgb(245, 239, 237);
+}
+
+.unselected{
+  opacity: 60%;
+}
+
+.unselected:hover{
+  opacity: 75%;
+}
+
+.tabel-of-content{
+  margin: 0;
+
+  list-style: none;
+
+  height: 90%;
+
+  overflow: scroll;
+  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tabel-of-content::-webkit-scrollbar {
+  display: none;
+}
+
+.tabel-of-content li{
+  padding: 0.7% 6%;
+}
+
+.tabel-of-content li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.about-author{
+  display: none;
+
+  height: 90%;
+
+  text-align: center;
+  margin: 40% 0;
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+.about-book{
+  display: none;
+
+  height: 90%;
+
+  text-align: center;
+  margin: 40% 0;
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+/********************* Styling for the scroll bar and scroll thumb *********************/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c7d0d4; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #415e6b; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e4652; 
+}
+
+/********************* Responsiveness *********************/
+
+@media (max-width: 1280px){
+
+  .page{
+    left: 10%;
+  }
+
+}
+
+@media (max-width: 1110px){
+
+  .burger-menu .content{
+    aspect-ratio: 1/1.5;
+  }
+
+}
+
+@media (max-width: 1000px){
+
+  .burger-menu .button{
+    margin: 1% 3.5%;
+  }
+
+  .burger-menu .content{
+    height: 100%;
+    width: 92vw;
+  }
+
+  .page{
+    left: 25%;
+  }
+
+}
+
+@media (max-width: 920px){
+  .page{
+    height: 70%;
+    left: 12%;
+  }
+
+}
+
+@media (max-width: 650px){
+
+  .page{
+    height: 60%;
+    left: 20%;
+  }
+
+}
+
+@media (max-width: 500px){
+
+  .burger-menu .button{
+    margin: 1.5% 4%;
+  }
+
+  .burger-menu .button .line{
+    width: 75%;
+  }
+
+  .page{
+    height: 45%;
+    left: 15%;
+  }
+
+}
+
+@media (max-height: 500px){
+
+  .tabel-of-content{
+    height: 80%;
+  }
+
+  .about-author{
+    margin: 0;
+    height: 80%;
+  }
+
+  .about-book{
+    margin: 0;
+    height: 80%;
+  }
+
+  .burger-menu .content{
+    width: 100%;
+    aspect-ratio: 2.5/1;
+  }
+
+}
+
+@media (max-height: 400px){
+  
+  .burger-menu .content{
+    aspect-ratio: 2/1;
+  }
+
+}
