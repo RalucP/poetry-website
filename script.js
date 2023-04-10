@@ -1,4 +1,3 @@
-
 const events = {
     content: document.querySelector(".content"),
     navBar: document.querySelector(".nav-bar"),
@@ -22,6 +21,7 @@ const settings = Object.freeze({
 
 let state = Object.freeze({
     counter: 0,
+
 });
 
 /**
@@ -70,7 +70,7 @@ function scrollAnimation(){
     let topScroll = Math.abs(container.getBoundingClientRect().top);
 
     //stores the aprox dimension of the scroll bar's thumb
-    let scrollThumb = (container.offsetHeight/5) / container.offsetHeight * container.offsetHeight;
+    let scrollThumb = (container.offsetHeight/10) / container.offsetHeight * container.offsetHeight;
     
     //the height of one page in a book
     const onePageHeight = (container.offsetHeight - scrollThumb)/(book.length-1);
@@ -120,7 +120,7 @@ function scrollAnimation(){
 function ScrollToPage(event){
     const {container, book} = settings;
     //stores the aprox. dimension of the scroll bar's thumb
-    let scrollThumb = (container.offsetHeight/5) / container.offsetHeight * container.offsetHeight;
+    let scrollThumb = (container.offsetHeight/10) / container.offsetHeight * container.offsetHeight;
     //the height of one page in a book
     const onePageHeight = (container.offsetHeight - scrollThumb)/(book.length-1);
 
@@ -138,6 +138,9 @@ function ScrollToPage(event){
     BurgerMenuToggle();
 }
 
+/**
+ * Toggles burger menu visibility
+ */
 function BurgerMenuToggle(){
     if (events.content.style.display === "block") {
         events.content.style.display = "none";
@@ -196,3 +199,10 @@ events.arrayTableOfContents.forEach( element => {
 events.burgerMenuButton.addEventListener('pointerdown',BurgerMenuToggle);
 
 events.navBar.addEventListener('pointerdown', NavigationMenu);
+
+window.addEventListener("load", function() {
+    window.scrollTo({
+        top: 1,
+        behavior: 'smooth'
+    });
+});
