@@ -22,6 +22,23 @@ body{
   box-shadow: 0.1em 0.1em 0.2em 0.2em #c9e2ef;
 }
 
+.link{
+  position: fixed;
+  bottom: 1%;
+  right: 3%;
+
+  text-align: end;
+  font-weight: bold;
+  font-size: 10pt;
+
+  color: #2e4652;
+}
+
+.link a{
+  color: #2e4652;
+  text-decoration: underline;
+}
+
 
 /********************* Styling for the book and pages *********************/
 
@@ -333,6 +350,10 @@ body{
   .burger-menu .content{
     width: 100%;
     aspect-ratio: 2.5/1;
+  }
+
+  .link{
+    font-size: 7pt;
   }
 
 }
