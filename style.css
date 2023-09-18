@@ -5,8 +5,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&display=swap');
 
+:root{
+  --primary: #996d42;
+  --secondary: #744e28;
+  --text: #B29172;
+  --accent: #573412;
+  --lightest: #f5efed;
+}
+
 *{
   font-family: 'Dancing Script', cursive;
+  user-select: none;
 }
 
 body{
@@ -15,11 +24,13 @@ body{
 
 .background{
   margin: 0;
-  background-color: #c7d0d4;
+  background-color: var(--text);
+  background: url("Resources/background.jpg") no-repeat fixed top;
+  background-size: cover;
 }
 
 .shadowed{
-  box-shadow: 0.1em 0.1em 0.2em 0.2em #c9e2ef;
+  box-shadow: 0.1em 0.1em 5em 0.2em rgba(30, 16, 8, 0.6);
 }
 
 .link{
@@ -31,11 +42,11 @@ body{
   font-weight: bold;
   font-size: 10pt;
 
-  color: #2e4652;
+  color: var(--accent);
 }
 
 .link a{
-  color: #2e4652;
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -52,9 +63,7 @@ body{
   height: 90%;
   width: 95%;
   position: fixed;
-  margin: 2.5% 2.5%;
-  overflow: hidden;
-  background: radial-gradient(circle, #e5f0f5 30%, #c7d0d4 100%);
+  margin: 4% 2.5%;
 }
 
 .border-left{
@@ -62,8 +71,8 @@ body{
   width: 70%;
   position: absolute;
   z-index: 3;
-  border-top: 5px solid #415e6b;
-  border-left: 5px solid #415e6b;
+  border-top: 5px solid var(--secondary);
+  border-left: 5px solid var(--secondary);
 }
 
 .border-right{
@@ -73,8 +82,8 @@ body{
   width: 70%;
   position: absolute;
   z-index: 3;
-  border-bottom: 5px solid #415e6b;
-  border-right: 5px solid #415e6b;
+  border-bottom: 5px solid var(--secondary);
+  border-right: 5px solid var(--secondary);
 }
   
 .page {
@@ -89,8 +98,12 @@ body{
   transform-origin: 14.6% 28.8%;
 }
 
+.inner-shadow{
+  box-shadow: inset 5px 5px 10px 10px black;
+}
+
 .shadow{
-  background-color: #415e6ba9;
+  background-color: hsla(32, 67%, 11%, 0.6);
   top: 10%;
   left: 15%;
   
@@ -105,10 +118,9 @@ body{
 
 .burger-menu{
   right: 0;
-  margin: 2.5% 2.5%;
   padding-top: 0;
 
-  height: 85.8%;
+  height: 97%;
 
   position: fixed;
   z-index: 2;
@@ -127,21 +139,21 @@ body{
   right: 0;
 
   padding: 0.5% 0.5%;
-  margin: 0.5% 3%;
+  margin: 0.5% 1.5%;
 
-  background-color: #567483;
+  background-color: var(--primary);
   border: 0;
   border-radius: 0.3em;
 }
 
 .burger-menu .button:hover {
-  background-color: #415e6b;
+  background-color: var(--secondary);
 }
 
 .burger-menu .button .line{
   width: 95%;
   height: 5%;
-  background-color:rgb(245, 239, 237);
+  background-color:var(--lightest);
   border-radius: 50em;
 
   transition-duration: 200ms;
@@ -150,18 +162,16 @@ body{
 .burger-menu .content{
   display: none;
 
-  background-color: #567483;
-  color: rgb(245, 239, 237);
+  background-color: var(--primary);
+  color: var(--lightest);
 
   height: 100%;
-  aspect-ratio: 1/1.2;
+  aspect-ratio: 1/1.4;
 
   margin: 0;
-  border-top: 5px solid #415e6b;
-  border-right: 5px solid #415e6b;
-  border-bottom: 5px solid #415e6b;
-  border-radius: 10px 0px 0px 10px;
-  padding-top: 3%;
+  border-left: 10px solid var(--secondary);
+  border-radius: 5px 0px 0px 10px;
+  padding-top: 6%;
   padding-bottom: 1%;
 }
 
@@ -185,7 +195,7 @@ body{
 
 .selected{
   opacity: 100%;
-  border-bottom: 2px solid rgb(245, 239, 237);
+  border-bottom: 2px solid var(--lightest);
 }
 
 .unselected{
@@ -214,7 +224,7 @@ body{
 }
 
 .tabel-of-content li{
-  padding: 0.7% 6%;
+  padding: 1% 6%;
 }
 
 .tabel-of-content li:hover{
@@ -247,19 +257,7 @@ body{
 /********************* Styling for the scroll bar and scroll thumb *********************/
 
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #c7d0d4; 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: #415e6b; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2e4652; 
+  display: none;
 }
 
 /********************* Responsiveness *********************/
